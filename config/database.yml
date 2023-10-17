@@ -24,6 +24,9 @@ default: &default
 development:
   <<: *default
   database: geolocation_api_development
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWD'] %>
+  host: <%= ENV['POSTGRES_HOST'] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
