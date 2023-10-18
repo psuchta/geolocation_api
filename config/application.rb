@@ -10,6 +10,7 @@ module GeolocationApi
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    ENV['IPSTACK_ACCESS_KEY'] = Rails.application.credentials.dig(:ipstack_access_key)
 
     # Configuration for the application, engines, and railties goes here.
     #
