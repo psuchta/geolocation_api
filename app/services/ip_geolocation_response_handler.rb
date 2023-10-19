@@ -1,6 +1,6 @@
 # This class will handle a response received from the ip geolocation API.
 # If the API response is no successful, the error will be raised
-class IpGeolocationHandler
+class IpGeolocationResponseHandler
   class IpGeolocationError < StandardError; end
 
   # Raises IpGeolocationError when Geolocation service response is invalid.

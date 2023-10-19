@@ -8,7 +8,7 @@ class IpGeolocationAdapter
   # @return [Hash] geolocation information
   def ip_geolocation(ip_or_url)
     api_response = Ipstack::API.standard(ip_or_url)
-    IpGeolocationHandler.handle_response(api_response)
+    IpGeolocationResponseHandler.handle_response(api_response)
 
     result = shape_geo_result(api_response)
     result.merge!(append_additional_info(api_response))

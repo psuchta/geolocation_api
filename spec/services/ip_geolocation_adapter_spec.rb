@@ -81,7 +81,7 @@ RSpec.describe IpGeolocationAdapter, type: :model do
     context 'when ip address is invalid url' do
       it 'raises IpGeolocationError with a message', :vcr do
         expect { service.ip_geolocation('www.fgjosldffgruchavlksmfvljssdfsd.pl') }.to(
-          raise_error(IpGeolocationHandler::IpGeolocationError, 'The IP Address supplied is invalid.')
+          raise_error(IpGeolocationResponseHandler::IpGeolocationError, 'The IP Address supplied is invalid.')
         )
       end
     end
@@ -89,7 +89,7 @@ RSpec.describe IpGeolocationAdapter, type: :model do
     context 'when ip address is url with https' do
       it 'raises IpGeolocationError with a message', :vcr do
         expect { service.ip_geolocation('https://www.wp.pl/') }.to(
-          raise_error(IpGeolocationHandler::IpGeolocationError, 'Not Found')
+          raise_error(IpGeolocationResponseHandler::IpGeolocationError, 'Not Found')
         )
       end
     end
@@ -97,7 +97,7 @@ RSpec.describe IpGeolocationAdapter, type: :model do
     context 'when ip address is invalid' do
       it 'raises IpGeolocationError with a message', :vcr do
         expect { service.ip_geolocation('8.8') }.to(
-          raise_error(IpGeolocationHandler::IpGeolocationError, 'The IP Address supplied is invalid.')
+          raise_error(IpGeolocationResponseHandler::IpGeolocationError, 'The IP Address supplied is invalid.')
         )
       end
     end
