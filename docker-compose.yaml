@@ -1,14 +1,23 @@
   version: "3.9"
   services:
+    db:
+      image: postgres:alpine3.15
+      volumes:
+        - ./tmp/db:/var/lib/postgresql/data
+      environment:
+        POSTGRES_PASSWORD: password
+      ports:
+        - 5432:5432
     app:
-      image: geolocation_api:1
+      build: .
+      command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
       environment:
         POSTGRES_USER: postgres
         POSTGRES_PASSWD: password
         POSTGRES_HOST: db
       ports:
         - 3000:3000
-    db:
-      image: postgres:alpine3.15
-      environment:
-        POSTGRES_PASSWORD: password
+      volumes:
+        - .:/geolocation_api
+      depends_on:
+        - db

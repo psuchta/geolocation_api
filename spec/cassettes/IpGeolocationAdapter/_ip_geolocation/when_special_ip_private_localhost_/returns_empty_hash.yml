@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.ipstack.com/127.0.0.1?access_key=<access_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Thu, 19 Oct 2023 12:03:50 GMT
+      X-Apilayer-Transaction-Id:
+      - 98fc6aca-886d-4c6c-b039-45888d7de5a9
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS
+      Access-Control-Allow-Headers:
+      - "*"
+      X-Quota-Limit:
+      - '1000'
+      X-Quota-Remaining:
+      - '939'
+      X-Increment-Usage:
+      - '1'
+      X-Request-Time:
+      - '0.026'
+    body:
+      encoding: UTF-8
+      string: '{"ip": "127.0.0.1", "type": "ipv4", "continent_code": null, "continent_name":
+        null, "country_code": null, "country_name": null, "region_code": null, "region_name":
+        null, "city": null, "zip": null, "latitude": 0.0, "longitude": 0.0, "location":
+        {"geoname_id": null, "capital": null, "languages": null, "country_flag": null,
+        "country_flag_emoji": null, "country_flag_emoji_unicode": null, "calling_code":
+        null, "is_eu": null}}'
+  recorded_at: Thu, 19 Oct 2023 12:03:50 GMT
+recorded_with: VCR 6.2.0
