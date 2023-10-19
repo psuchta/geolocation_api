@@ -23,14 +23,17 @@ class Api::V1::IpInfosController < ApplicationController
   private
 
   def set_ip
-    param_ip = ip_search_attributes[:ip]
-    @ip = IpInfo.where(ip: param_ip)
-                .or(IpInfo.where(url: param_ip)).first
+    search_param = search_params[:ip].presence || normalized_url_param
+    @ip = IpInfo.find_by_ip_or_url(search_param)
 
     raise ActiveRecord::RecordNotFound unless @ip
   end
 
-  def ip_search_attributes
-    params.permit(:ip)
+  def normalized_url_param
+    UrlParser.trim_url(search_params[:url])
+  end
+
+  def search_params
+    params.permit(:ip, :url)
   end
 end

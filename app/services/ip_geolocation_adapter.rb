@@ -4,10 +4,10 @@
 class IpGeolocationAdapter
   # Sends the ip address to an external API service, the service returns geolocation data
   #
-  # @param ip_address [String] ip address or url of a website
+  # @param ip_or_url [String] ip address or url of a website
   # @return [Hash] geolocation information
-  def ip_geolocation(ip_address)
-    api_response = Ipstack::API.standard(ip_address)
+  def ip_geolocation(ip_or_url)
+    api_response = Ipstack::API.standard(ip_or_url)
     IpGeolocationHandler.handle_response(api_response)
 
     result = shape_geo_result(api_response)
