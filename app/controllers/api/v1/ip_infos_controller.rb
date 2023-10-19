@@ -2,7 +2,7 @@ class Api::V1::IpInfosController < ApplicationController
   before_action :set_ip, only: [:show, :destroy]
 
   def show
-    render json: { data: @ip }, status: :ok
+    render json: { data: @ip }, except: [:id, :created_at, :updated_at], status: :ok
   end
 
   def create
@@ -14,7 +14,7 @@ class Api::V1::IpInfosController < ApplicationController
 
   def destroy
     if @ip.destroy
-      render json: { message: 'Destroy Success', data: @ip }, status: :ok
+      render json: { message: 'Destroyed successfully', data: @ip.id }, status: :ok
     else
       render json: { message: @ip.errors.full_messages }, status: :unprocessable_entity
     end
