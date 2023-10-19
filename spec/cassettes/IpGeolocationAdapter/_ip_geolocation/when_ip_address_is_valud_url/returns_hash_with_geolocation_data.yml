@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.ipstack.com/www.wp.pl?access_key=c7e567f083dff7d78b95c34960d2f95a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Thu, 19 Oct 2023 11:53:18 GMT
+      X-Apilayer-Transaction-Id:
+      - '02953e63-0bec-417a-b5e6-2e2839a290cf'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS
+      Access-Control-Allow-Headers:
+      - "*"
+      X-Quota-Limit:
+      - '1000'
+      X-Quota-Remaining:
+      - '958'
+      X-Increment-Usage:
+      - '1'
+      X-Request-Time:
+      - '0.146'
+    body:
+      encoding: UTF-8
+      string: '{"ip": "212.77.98.9", "type": "ipv4", "continent_code": "EU", "continent_name":
+        "Europe", "country_code": "PL", "country_name": "Poland", "region_code": "PM",
+        "region_name": "Pomerania", "city": "Gda\u0144sk", "zip": "80-009", "latitude":
+        54.31930923461914, "longitude": 18.63736915588379, "location": {"geoname_id":
+        3099434, "capital": "Warsaw", "languages": [{"code": "pl", "name": "Polish",
+        "native": "Polski"}], "country_flag": "https://assets.ipstack.com/flags/pl.svg",
+        "country_flag_emoji": "\ud83c\uddf5\ud83c\uddf1", "country_flag_emoji_unicode":
+        "U+1F1F5 U+1F1F1", "calling_code": "48", "is_eu": true}}'
+  recorded_at: Thu, 19 Oct 2023 11:53:18 GMT
+recorded_with: VCR 6.2.0

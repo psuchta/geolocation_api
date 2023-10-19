@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.ipstack.com/8.8.8.8?access_key=c7e567f083dff7d78b95c34960d2f95a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Thu, 19 Oct 2023 11:53:17 GMT
+      X-Apilayer-Transaction-Id:
+      - a4703bf7-331f-4258-968a-46b6efd0c042
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS
+      Access-Control-Allow-Headers:
+      - "*"
+      X-Quota-Limit:
+      - '1000'
+      X-Quota-Remaining:
+      - '959'
+      X-Increment-Usage:
+      - '1'
+      X-Request-Time:
+      - '0.027'
+    body:
+      encoding: UTF-8
+      string: '{"ip": "8.8.8.8", "type": "ipv4", "continent_code": "NA", "continent_name":
+        "North America", "country_code": "US", "country_name": "United States", "region_code":
+        "OH", "region_name": "Ohio", "city": "Glenmont", "zip": "44628", "latitude":
+        40.5369987487793, "longitude": -82.12859344482422, "location": {"geoname_id":
+        null, "capital": "Washington D.C.", "languages": [{"code": "en", "name": "English",
+        "native": "English"}], "country_flag": "https://assets.ipstack.com/flags/us.svg",
+        "country_flag_emoji": "\ud83c\uddfa\ud83c\uddf8", "country_flag_emoji_unicode":
+        "U+1F1FA U+1F1F8", "calling_code": "1", "is_eu": false}}'
+  recorded_at: Thu, 19 Oct 2023 11:53:17 GMT
+recorded_with: VCR 6.2.0
