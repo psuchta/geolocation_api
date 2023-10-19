@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :ip_info do
     ip { "MyString" }
     url { "MyString" }
-    type { :ipv4 }
+    ip_type { :ipv4 }
     continent_name { "Europe" }
     country_name { "Poland" }
     region_name { "Mazovia" }

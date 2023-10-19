@@ -3,7 +3,7 @@ class CreateIpInfos < ActiveRecord::Migration[7.0]
     create_table :ip_infos do |t|
       t.string  :ip
       t.string  :url
-      t.integer :type
+      t.integer :ip_type
       t.string  :continent_name
       t.string  :country_name
       t.string  :region_name

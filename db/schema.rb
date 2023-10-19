@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_19_141836) do
   create_table "ip_infos", force: :cascade do |t|
     t.string "ip"
     t.string "url"
-    t.integer "type"
+    t.integer "ip_type"
     t.string "continent_name"
     t.string "country_name"
     t.string "region_name"

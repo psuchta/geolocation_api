@@ -1,3 +1,3 @@
 class IpInfo < ApplicationRecord
-  enum type: %i[ipv4 ipv6]
+  enum :ip_type, %i[ipv4 ipv6]
 end
