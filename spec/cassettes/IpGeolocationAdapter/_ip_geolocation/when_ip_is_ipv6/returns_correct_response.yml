@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.ipstack.com/2001:db8:3333:4444:CCCC:DDDD:EEEE:FFFF?access_key=<access_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Thu, 19 Oct 2023 14:44:13 GMT
+      X-Apilayer-Transaction-Id:
+      - 968c9db6-5ecf-4172-8125-a1658308dce0
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS
+      Access-Control-Allow-Headers:
+      - "*"
+      X-Quota-Limit:
+      - '1000'
+      X-Quota-Remaining:
+      - '924'
+      X-Increment-Usage:
+      - '1'
+      X-Request-Time:
+      - '0.025'
+    body:
+      encoding: UTF-8
+      string: '{"ip": "2001:db8:3333:4444:CCCC:DDDD:EEEE:FFFF", "type": "ipv6", "continent_code":
+        null, "continent_name": null, "country_code": null, "country_name": null,
+        "region_code": null, "region_name": null, "city": null, "zip": null, "latitude":
+        0.0, "longitude": 0.0, "location": {"geoname_id": null, "capital": null, "languages":
+        null, "country_flag": null, "country_flag_emoji": null, "country_flag_emoji_unicode":
+        null, "calling_code": null, "is_eu": null}}'
+  recorded_at: Thu, 19 Oct 2023 14:44:13 GMT
+recorded_with: VCR 6.2.0
