@@ -59,6 +59,25 @@ RSpec.describe IpGeolocationAdapter, type: :model do
       end
     end
 
+    context 'when ip is ipv6' do
+      it 'returns correct response', :vcr do
+        expected_hash = {
+          ip: '2001:db8:3333:4444:CCCC:DDDD:EEEE:FFFF',
+          type: 'ipv6',
+          continent_name: nil,
+          country_name: nil,
+          region_name: nil,
+          city: nil,
+          zip: nil,
+          latitude: 0.0,
+          longitude: 0.0
+        }
+
+        result = service.ip_geolocation('2001:db8:3333:4444:CCCC:DDDD:EEEE:FFFF')
+        expect(result).to eq(expected_hash)
+      end
+    end
+
     context 'when ip address is invalid url' do
       it 'raises IpGeolocationError with a message', :vcr do
         expect { service.ip_geolocation('www.fgjosldffgruchavlksmfvljssdfsd.pl') }.to(
