@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.ipstack.com/127.0.0.1?access_key=c7e567f083dff7d78b95c34960d2f95a
+    uri: http://api.ipstack.com/127.0.0.1?access_key=<access_key>
     body:
       encoding: US-ASCII
       string: ''
@@ -23,9 +23,9 @@ http_interactions:
       Transfer-Encoding:
       - chunked
       Date:
-      - Thu, 19 Oct 2023 11:53:18 GMT
+      - Thu, 19 Oct 2023 12:03:50 GMT
       X-Apilayer-Transaction-Id:
-      - 5630ff1b-b0ec-464e-98c6-172a7ab94c46
+      - 98fc6aca-886d-4c6c-b039-45888d7de5a9
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -35,11 +35,11 @@ http_interactions:
       X-Quota-Limit:
       - '1000'
       X-Quota-Remaining:
-      - '957'
+      - '939'
       X-Increment-Usage:
       - '1'
       X-Request-Time:
-      - '0.021'
+      - '0.026'
     body:
       encoding: UTF-8
       string: '{"ip": "127.0.0.1", "type": "ipv4", "continent_code": null, "continent_name":
@@ -48,5 +48,5 @@ http_interactions:
         {"geoname_id": null, "capital": null, "languages": null, "country_flag": null,
         "country_flag_emoji": null, "country_flag_emoji_unicode": null, "calling_code":
         null, "is_eu": null}}'
-  recorded_at: Thu, 19 Oct 2023 11:53:18 GMT
+  recorded_at: Thu, 19 Oct 2023 12:03:50 GMT
 recorded_with: VCR 6.2.0

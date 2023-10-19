@@ -68,4 +68,5 @@ VCR.configure do |config|
   config.cassette_library_dir = "#{::Rails.root}/spec/cassettes"
   config.hook_into :webmock
   config.configure_rspec_metadata!
+  config.filter_sensitive_data('<access_key>') { Rails.application.credentials.dig(:ipstack_access_key) }
 end

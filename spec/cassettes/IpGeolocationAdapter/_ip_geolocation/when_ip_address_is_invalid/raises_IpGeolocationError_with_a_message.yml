@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.ipstack.com/8.8?access_key=c7e567f083dff7d78b95c34960d2f95a
+    uri: http://api.ipstack.com/8.8?access_key=<access_key>
     body:
       encoding: US-ASCII
       string: ''
@@ -23,9 +23,9 @@ http_interactions:
       Transfer-Encoding:
       - chunked
       Date:
-      - Thu, 19 Oct 2023 11:53:19 GMT
+      - Thu, 19 Oct 2023 12:03:51 GMT
       X-Apilayer-Transaction-Id:
-      - 4167778b-44d0-4de6-bdb1-084367bd6f69
+      - ae2144ad-3080-4485-8908-7e90bf9000a5
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -35,14 +35,14 @@ http_interactions:
       X-Quota-Limit:
       - '1000'
       X-Quota-Remaining:
-      - '954'
+      - '936'
       X-Increment-Usage:
       - '1'
       X-Request-Time:
-      - '0.033'
+      - '0.029'
     body:
       encoding: UTF-8
       string: '{"success":false,"error":{"code":106,"type":"invalid_ip_address","info":"The
         IP Address supplied is invalid."}}'
-  recorded_at: Thu, 19 Oct 2023 11:53:19 GMT
+  recorded_at: Thu, 19 Oct 2023 12:03:51 GMT
 recorded_with: VCR 6.2.0
