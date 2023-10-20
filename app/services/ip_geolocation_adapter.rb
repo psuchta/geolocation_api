@@ -40,7 +40,7 @@ class IpGeolocationAdapter
   def append_additional_info(ip_info)
     {
       ip: ip_info['ip'],
-      type: ip_info['type']
+      ip_type: ip_info['type']
     }
   end
 end

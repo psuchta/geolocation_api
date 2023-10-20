@@ -2,14 +2,19 @@ class Api::V1::IpInfosController < ApplicationController
   before_action :set_ip, only: [:show, :destroy]
 
   def show
-    render json: { data: @ip }, except: [:id, :created_at, :updated_at], status: :ok
+    render json: { data: @ip }, status: :ok
   end
 
   def create
     #  It wasn't sepcified in the task description, but I assumed that if we try to create an ip which is already in the app's database,
     #  a new geodata will be fetched from the ipstack endpoint and it will replace the old geodata related to that ip.
+    ip_creator_service = IpGeolocationService.new
+    touched_ip = ip_creator_service.call(
+      ip: search_params[:ip],
+      url: normalized_url_param
+    )
 
-    render json: { data: {} }, status: :ok
+    render json: { data: touched_ip }, status: :ok
   end
 
   def destroy
@@ -30,7 +35,7 @@ class Api::V1::IpInfosController < ApplicationController
   end
 
   def normalized_url_param
-    UrlParser.trim_url(search_params[:url])
+    UrlParser.trim_url(search_params[:url]) if search_params[:url].present?
   end
 
   def search_params

@@ -1,7 +1,18 @@
 class ApplicationController < ActionController::API
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
+  rescue_from ActiveRecord::RecordInvalid, with: :invalid
 
-  rescue_from ActiveRecord::RecordNotFound do
-    render json: { message: "Requested Ip cannot be found in the database" },
-           status: :not_found
+  rescue_from IpGeolocationResponseHandler::GeolocationResponseError do |exception|
+    render json: { message: exception.message }, status: 500
+  end
+
+  private
+
+  def invalid(invalid)
+    render json: { error: invalid.record.errors.full_messages }, status: :unprocessable_entity
+  end
+
+  def not_found
+    render json: { error: "Requested resource cannot be found in the database" }, status: :not_found
   end
 end
