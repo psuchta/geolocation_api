@@ -23,9 +23,9 @@ http_interactions:
       Transfer-Encoding:
       - chunked
       Date:
-      - Thu, 19 Oct 2023 12:03:50 GMT
+      - Fri, 20 Oct 2023 01:05:41 GMT
       X-Apilayer-Transaction-Id:
-      - 4938cb62-0f4d-40e4-9727-9a1c7fda9e4e
+      - d849d856-ef46-4fcb-9815-43302b47c3ba
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -35,11 +35,11 @@ http_interactions:
       X-Quota-Limit:
       - '1000'
       X-Quota-Remaining:
-      - '940'
+      - '714'
       X-Increment-Usage:
       - '1'
       X-Request-Time:
-      - '0.028'
+      - '0.029'
     body:
       encoding: UTF-8
       string: '{"ip": "212.77.98.9", "type": "ipv4", "continent_code": "EU", "continent_name":
@@ -50,5 +50,5 @@ http_interactions:
         "native": "Polski"}], "country_flag": "https://assets.ipstack.com/flags/pl.svg",
         "country_flag_emoji": "\ud83c\uddf5\ud83c\uddf1", "country_flag_emoji_unicode":
         "U+1F1F5 U+1F1F1", "calling_code": "48", "is_eu": true}}'
-  recorded_at: Thu, 19 Oct 2023 12:03:50 GMT
+  recorded_at: Fri, 20 Oct 2023 01:05:41 GMT
 recorded_with: VCR 6.2.0

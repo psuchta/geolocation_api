@@ -7,7 +7,7 @@ RSpec.describe IpGeolocationAdapter, type: :model do
     it 'returns hash with geolocation data', :vcr do
       expected_hash = {
         ip: '8.8.8.8',
-        type: 'ipv4',
+        ip_type: 'ipv4',
         continent_name: 'North America',
         country_name: 'United States',
         region_name: 'Ohio',
@@ -25,7 +25,7 @@ RSpec.describe IpGeolocationAdapter, type: :model do
       it 'returns hash with geolocation data', :vcr do
         expected_hash = {
           ip: '212.77.98.9',
-          type: 'ipv4',
+          ip_type: 'ipv4',
           continent_name: 'Europe',
           country_name: 'Poland',
           region_name: 'Pomerania',
@@ -44,7 +44,7 @@ RSpec.describe IpGeolocationAdapter, type: :model do
       it 'returns empty hash', :vcr do
         expected_hash = {
           ip: '127.0.0.1',
-          type: 'ipv4',
+          ip_type: 'ipv4',
           continent_name: nil,
           country_name: nil,
           region_name: nil,
@@ -63,7 +63,7 @@ RSpec.describe IpGeolocationAdapter, type: :model do
       it 'returns correct response', :vcr do
         expected_hash = {
           ip: '2001:db8:3333:4444:CCCC:DDDD:EEEE:FFFF',
-          type: 'ipv6',
+          ip_type: 'ipv6',
           continent_name: nil,
           country_name: nil,
           region_name: nil,
@@ -79,25 +79,25 @@ RSpec.describe IpGeolocationAdapter, type: :model do
     end
 
     context 'when ip address is invalid url' do
-      it 'raises IpGeolocationError with a message', :vcr do
+      it 'raises GeolocationResponseError with a message', :vcr do
         expect { service.ip_geolocation('www.fgjosldffgruchavlksmfvljssdfsd.pl') }.to(
-          raise_error(IpGeolocationHandler::IpGeolocationError, 'The IP Address supplied is invalid.')
+          raise_error(IpGeolocationResponseHandler::GeolocationResponseError, 'The IP Address supplied is invalid.')
         )
       end
     end
 
     context 'when ip address is url with https' do
-      it 'raises IpGeolocationError with a message', :vcr do
+      it 'raises GeolocationResponseError with a message', :vcr do
         expect { service.ip_geolocation('https://www.wp.pl/') }.to(
-          raise_error(IpGeolocationHandler::IpGeolocationError, 'Not Found')
+          raise_error(IpGeolocationResponseHandler::GeolocationResponseError, 'Not Found')
         )
       end
     end
 
     context 'when ip address is invalid' do
-      it 'raises IpGeolocationError with a message', :vcr do
+      it 'raises GeolocationResponseError with a message', :vcr do
         expect { service.ip_geolocation('8.8') }.to(
-          raise_error(IpGeolocationHandler::IpGeolocationError, 'The IP Address supplied is invalid.')
+          raise_error(IpGeolocationResponseHandler::GeolocationResponseError, 'The IP Address supplied is invalid.')
         )
       end
     end
