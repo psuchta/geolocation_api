@@ -25,7 +25,7 @@ http_interactions:
       Date:
       - Fri, 20 Oct 2023 01:05:40 GMT
       X-Apilayer-Transaction-Id:
-      - dd01f1f7-7f48-46cc-b5db-ce2358bcb190
+      - 2d7faaa0-f209-42d0-990d-722f81e8af95
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -35,11 +35,11 @@ http_interactions:
       X-Quota-Limit:
       - '1000'
       X-Quota-Remaining:
-      - '715'
+      - '717'
       X-Increment-Usage:
       - '1'
       X-Request-Time:
-      - '0.033'
+      - '0.027'
     body:
       encoding: UTF-8
       string: '{"ip": "8.8.8.8", "type": "ipv4", "continent_code": "NA", "continent_name":

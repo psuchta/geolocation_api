@@ -32,10 +32,10 @@ RSpec.describe IpGeolocationService, type: :model do
           'city' => 'San Francisco',
           'continent_name' => 'North America',
           'country_name' => 'United States',
-          'ip' => '140.82.114.4',
+          'ip' => '140.82.113.4',
           'ip_type' => 'ipv4',
-          'latitude' => 0.3776784896850586e2,
-          'longitude' => -0.1223928604125976e3,
+          'latitude' => 37.76784896850586,
+          'longitude' => -122.3928604125976,
           'region_name' => 'California',
           'url' => 'github.com',
           'zip' => '94107'

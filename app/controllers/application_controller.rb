@@ -9,10 +9,10 @@ class ApplicationController < ActionController::API
   private
 
   def invalid(invalid)
-    render json: { error: invalid.record.errors.full_messages }, status: :unprocessable_entity
+    render json: { message: invalid.record.errors.full_messages }, status: :unprocessable_entity
   end
 
   def not_found
-    render json: { error: "Requested resource cannot be found in the database" }, status: :not_found
+    render json: { message: "Requested resource cannot be found in the database" }, status: :not_found
   end
 end

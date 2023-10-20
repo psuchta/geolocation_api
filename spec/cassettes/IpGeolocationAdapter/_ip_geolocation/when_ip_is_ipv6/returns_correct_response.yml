@@ -23,9 +23,9 @@ http_interactions:
       Transfer-Encoding:
       - chunked
       Date:
-      - Thu, 19 Oct 2023 14:44:13 GMT
+      - Fri, 20 Oct 2023 01:05:41 GMT
       X-Apilayer-Transaction-Id:
-      - 968c9db6-5ecf-4172-8125-a1658308dce0
+      - f14faf48-c290-4aaa-a5b0-02157556b5d3
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -35,7 +35,7 @@ http_interactions:
       X-Quota-Limit:
       - '1000'
       X-Quota-Remaining:
-      - '924'
+      - '712'
       X-Increment-Usage:
       - '1'
       X-Request-Time:
@@ -48,5 +48,5 @@ http_interactions:
         0.0, "longitude": 0.0, "location": {"geoname_id": null, "capital": null, "languages":
         null, "country_flag": null, "country_flag_emoji": null, "country_flag_emoji_unicode":
         null, "calling_code": null, "is_eu": null}}'
-  recorded_at: Thu, 19 Oct 2023 14:44:13 GMT
+  recorded_at: Fri, 20 Oct 2023 01:05:41 GMT
 recorded_with: VCR 6.2.0

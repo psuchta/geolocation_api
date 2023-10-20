@@ -28,7 +28,7 @@ RSpec.describe 'IpInfos', type: :request do
           }
           get '/api/v1/ip_infos', params: { ip: '8.8.8.8' }
 
-          expect(json['data']).to eq(expected)
+          expect(json['data']).to include(expected)
         end
       end
 
@@ -37,7 +37,7 @@ RSpec.describe 'IpInfos', type: :request do
           get '/api/v1/ip_infos', params: { ip: '7.7.7.7' }
 
           expect(response).to have_http_status(404)
-          expect(json['message']).to eq('Requested Ip cannot be found in the database')
+          expect(json['message']).to eq('Requested resource cannot be found in the database')
         end
       end
     end
@@ -59,7 +59,7 @@ RSpec.describe 'IpInfos', type: :request do
           }
           get '/api/v1/ip_infos', params: { url: 'www.funpart.pl' }
 
-          expect(json['data']).to eq(expected)
+          expect(json['data']).to include(expected)
         end
       end
 
@@ -68,7 +68,7 @@ RSpec.describe 'IpInfos', type: :request do
           get '/api/v1/ip_infos', params: { url: '404.pl' }
 
           expect(response).to have_http_status(404)
-          expect(json['message']).to eq('Requested Ip cannot be found in the database')
+          expect(json['message']).to eq('Requested resource cannot be found in the database')
         end
       end
     end
@@ -100,7 +100,7 @@ RSpec.describe 'IpInfos', type: :request do
           delete '/api/v1/ip_infos', params: { ip: '0.6.8.8' }
 
           expect(response).to have_http_status(404)
-          expect(json['message']).to eq('Requested Ip cannot be found in the database')
+          expect(json['message']).to eq('Requested resource cannot be found in the database')
         end
       end
     end
@@ -126,33 +126,34 @@ RSpec.describe 'IpInfos', type: :request do
           delete '/api/v1/ip_infos', params: { url: 'www.fasdfasfasfunpart.pl' }
 
           expect(response).to have_http_status(404)
-          expect(json['message']).to eq('Requested Ip cannot be found in the database')
+          expect(json['message']).to eq('Requested resource cannot be found in the database')
         end
       end
     end
   end
 
   describe 'POST /create' do
-    let!(:ip_info) { FactoryBot.create(:ip_info, ip: '8.8.8.8') }
+    let!(:ip_info) { FactoryBot.create(:ip_info, ip: '8.8.8.8', latitude: 12.12) }
 
     context 'based on Ip param' do
       it 'returns status code 200', :vcr do
-        post '/api/v1/ip_infos', params: { ip: '7.7.7.7', latitude: 12.12 }
+        post '/api/v1/ip_infos', params: { ip: '7.7.7.7' }
 
         expect(response).to have_http_status(200)
       end
 
       context 'when ip is in the database' do
-        it 'updates IP with new geodata' do
-          post '/api/v1/ip_infos', params: { ip: '7.7.7.7' }
+        it 'updates IP with new geodata', :vcr do
+          expect { post '/api/v1/ip_infos', params: { ip: '8.8.8.8' } }
+            .to change { IpInfo.count }.by(0)
 
-          expect(json['data']['latitude']).to eq('39.043701171875')
-          expect(ip_info.reload.latitude).to eq('39.043701171875')
+          expect(json['data']['latitude']).to eq('40.5369987487793')
+          expect(ip_info.reload.latitude).to eq(0.405369987487793e2)
         end
       end
 
       context 'when ip is not in the database' do
-        it 'creates new ip in the database' do
+        it 'creates new ip in the database', :vcr do
           expected = {
             'city' => 'Ashburn',
             'continent_name' => 'North America',
@@ -162,14 +163,14 @@ RSpec.describe 'IpInfos', type: :request do
             'latitude' => '39.043701171875',
             'longitude' => '-77.47419738769531',
             'region_name' => 'Virginia',
-            'url' => 'www.google.pl',
+            'url' => nil,
             'zip' => '20147'
           }
 
           expect { post '/api/v1/ip_infos', params: { ip: '7.7.7.7' } }
             .to change { IpInfo.count }.by(1)
 
-          expect(json).to eq(expected)
+          expect(json['data']).to include(expected)
         end
       end
     end

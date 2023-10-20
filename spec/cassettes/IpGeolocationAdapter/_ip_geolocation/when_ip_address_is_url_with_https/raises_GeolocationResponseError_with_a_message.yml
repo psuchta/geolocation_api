@@ -23,9 +23,9 @@ http_interactions:
       Transfer-Encoding:
       - chunked
       Date:
-      - Thu, 19 Oct 2023 12:03:51 GMT
+      - Fri, 20 Oct 2023 01:05:42 GMT
       X-Apilayer-Transaction-Id:
-      - 6dffae25-7948-4dcf-ac2b-1b30dbefd3f4
+      - fb389135-e061-4489-92b3-6a53d214636d
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -35,13 +35,13 @@ http_interactions:
       X-Quota-Limit:
       - '1000'
       X-Quota-Remaining:
-      - '937'
+      - '710'
       X-Increment-Usage:
       - '1'
       X-Request-Time:
-      - '0.021'
+      - '0.027'
     body:
       encoding: UTF-8
       string: '{"detail":"Not Found"}'
-  recorded_at: Thu, 19 Oct 2023 12:03:51 GMT
+  recorded_at: Fri, 20 Oct 2023 01:05:42 GMT
 recorded_with: VCR 6.2.0

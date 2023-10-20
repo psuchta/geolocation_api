@@ -9,23 +9,17 @@ class IpGeolocationService
     geolocation_data = @geolocation_api.ip_geolocation(ip_or_url)
     build_ip_data(url, geolocation_data)
 
-    ip_obj = get_ip_object(url, geolocation_data, ip_or_url)
+    # One url can have many ips, case of loadbalancer
+    ip_obj = if url.present?
+               IpInfo.where(
+                 ip: geolocation_data[:ip],
+                 url: geolocation_data[:url]
+               ).first
+             else
+               IpInfo.find_by_ip_or_url(ip_or_url)
+             end
 
     update_or_create_ip(ip_obj, geolocation_data)
-  end
-
-  private
-
-  def get_ip_object(url, geolocation_data, ip_or_url)
-    # One url can have many ips, case of loadbalancer
-    if url.present?
-      return IpInfo.where(
-        ip: geolocation_data[:ip],
-        url: geolocation_data[:url]
-      ).first
-    end
-
-    IpInfo.find_by_ip_or_url(ip_or_url)
   end
 
   def build_ip_data(url, geolocation_data)

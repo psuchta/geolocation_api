@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.ipstack.com/8.8.8.8?access_key=<access_key>
+    uri: http://api.ipstack.com/7.7.7.7?access_key=<access_key>
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       Date:
       - Fri, 20 Oct 2023 01:05:40 GMT
       X-Apilayer-Transaction-Id:
-      - dd01f1f7-7f48-46cc-b5db-ce2358bcb190
+      - e1511f35-52f8-41c0-9029-0b3f6a543c43
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -35,19 +35,19 @@ http_interactions:
       X-Quota-Limit:
       - '1000'
       X-Quota-Remaining:
-      - '715'
+      - '716'
       X-Increment-Usage:
       - '1'
       X-Request-Time:
-      - '0.033'
+      - '0.024'
     body:
       encoding: UTF-8
-      string: '{"ip": "8.8.8.8", "type": "ipv4", "continent_code": "NA", "continent_name":
+      string: '{"ip": "7.7.7.7", "type": "ipv4", "continent_code": "NA", "continent_name":
         "North America", "country_code": "US", "country_name": "United States", "region_code":
-        "OH", "region_name": "Ohio", "city": "Glenmont", "zip": "44628", "latitude":
-        40.5369987487793, "longitude": -82.12859344482422, "location": {"geoname_id":
-        null, "capital": "Washington D.C.", "languages": [{"code": "en", "name": "English",
-        "native": "English"}], "country_flag": "https://assets.ipstack.com/flags/us.svg",
+        "VA", "region_name": "Virginia", "city": "Ashburn", "zip": "20147", "latitude":
+        39.043701171875, "longitude": -77.47419738769531, "location": {"geoname_id":
+        4744870, "capital": "Washington D.C.", "languages": [{"code": "en", "name":
+        "English", "native": "English"}], "country_flag": "https://assets.ipstack.com/flags/us.svg",
         "country_flag_emoji": "\ud83c\uddfa\ud83c\uddf8", "country_flag_emoji_unicode":
         "U+1F1FA U+1F1F8", "calling_code": "1", "is_eu": false}}'
   recorded_at: Fri, 20 Oct 2023 01:05:40 GMT

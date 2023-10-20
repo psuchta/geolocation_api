@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.ipstack.com/127.0.0.1?access_key=<access_key>
+    uri: http://api.ipstack.com/www.fgjosldffgruchavlksmfvljssdfsd.pl?access_key=<access_key>
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       Date:
       - Fri, 20 Oct 2023 01:05:41 GMT
       X-Apilayer-Transaction-Id:
-      - 26fcdc0d-93b6-4948-aab8-0bd2235d4057
+      - 44421bc0-ba7e-45d7-bab6-0e07613733a8
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -35,18 +35,14 @@ http_interactions:
       X-Quota-Limit:
       - '1000'
       X-Quota-Remaining:
-      - '713'
+      - '711'
       X-Increment-Usage:
       - '1'
       X-Request-Time:
-      - '0.022'
+      - '0.055'
     body:
       encoding: UTF-8
-      string: '{"ip": "127.0.0.1", "type": "ipv4", "continent_code": null, "continent_name":
-        null, "country_code": null, "country_name": null, "region_code": null, "region_name":
-        null, "city": null, "zip": null, "latitude": 0.0, "longitude": 0.0, "location":
-        {"geoname_id": null, "capital": null, "languages": null, "country_flag": null,
-        "country_flag_emoji": null, "country_flag_emoji_unicode": null, "calling_code":
-        null, "is_eu": null}}'
+      string: '{"success":false,"error":{"code":106,"type":"invalid_ip_address","info":"The
+        IP Address supplied is invalid."}}'
   recorded_at: Fri, 20 Oct 2023 01:05:41 GMT
 recorded_with: VCR 6.2.0
