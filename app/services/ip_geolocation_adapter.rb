@@ -7,7 +7,10 @@ class IpGeolocationAdapter
   # @param ip_or_url [String] ip address or url of a website
   # @return [Hash] geolocation information
   def ip_geolocation(ip_or_url)
-    api_response = Ipstack::API.standard(ip_or_url)
+    api_response = nil
+    IpGeolocationResponseHandler.handle_api_down do
+      api_response = Ipstack::API.standard(ip_or_url)
+    end
     IpGeolocationResponseHandler.handle_response(api_response)
 
     result = shape_geo_result(api_response)
