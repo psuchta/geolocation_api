@@ -3,18 +3,18 @@ require 'rails_helper'
 RSpec.describe UrlParser, type: :model do
   describe '.trim_url' do
     it 'removes scheme/protocol part from the url' do
-      expect(UrlParser.trim_url('http://www.wp.pl')).to eq('wp.pl')
+      expect(UrlParser.trim_url('https://www.wp.pl')).to eq('wp.pl')
     end
 
     it 'normalizes url' do
       expect(UrlParser.trim_url('http://www.詹姆斯.com/')).to eq('xn--8ws00zhy3a.com')
     end
 
-    it "doesnt change url when it's good" do
+    it "returns only domain of the url" do
       expect(UrlParser.trim_url('www.wp.com')).to eq('wp.com')
     end
 
-    it "doesnt change url when it's good" do
+    it "returns only domain of the url when parameters are present" do
       expect(UrlParser.trim_url('http://example.com/path?param1=one&param2=2&param3=something3')).to eq('example.com')
     end
 
